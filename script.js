@@ -29,8 +29,9 @@ $(document).ready(function () {
 
                 let table = new DataTable("#mytable", {
                     data: data['account_list'][0]['character_list'],
-                    pageLength: 100,
+                    pageLength: 25,
                     searching: true,
+                    destroy: true,
                     columns: [
                         { "data": "world_name" },
                         { "data": "character_level" },
