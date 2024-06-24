@@ -1,8 +1,14 @@
 var data_load = document.getElementById('data_load');
 var mytable = document.getElementById('mytable');
+var mapleid = document.getElementById('mapleid');
+var mapleid_ul = document.getElementById('mapleid_ul');
+var id_dropdown = document.getElementById('id_dropdown');
+var account_num=0;
+var data;
 
 $(document).ready(function () {
     $(data_load).click(function () {
+        account_num = 0;
         $.ajax({
             url: 'https://open.api.nexon.com/maplestory/v1/character/list',
             dataType: "json",
@@ -10,74 +16,102 @@ $(document).ready(function () {
                 var apikey = document.getElementById('apikey').value;
                 xhr.setRequestHeader("accept", "application/json")
                 xhr.setRequestHeader("x-nxopen-api-key", apikey)
-            }, success: function (data) {
-                // console.log(data['account_list'][0]['character_list']);
-                // var json = data['account_list'][0]['character_list'];
-                // let character_class = new Array();
-                // let character_level = new Array();
-                // let character_name = new Array();
-                // let ocid = new Array();
-                // let world_name = new Array();
-                // for (i = 0; i < json.length; i++) {
-                //     character_class[i] = json[i].character_class;
-                //     character_level[i] = json[i].character_level;
-                //     character_name[i] = json[i].character_name;
-                //     ocid[i] = json[i].ocid;
-                //     world_name[i] = json[i].world_name;
-                // }
-                // let table = document.getElementById('mytable');
+            }, success: function (datas) {
+                data = datas;
+                account_num = datas['account_list'].length;
+                // console.log(account_num);
 
-                let table = new DataTable("#mytable", {
-                    data: data['account_list'][0]['character_list'],
-                    pageLength: 25,
-                    searching: true,
-                    destroy: true,
-                    columns: [
-                        { "data": "world_name" },
-                        { "data": "character_level" },
-                        { "data": "character_class" },
-                        { "data": "character_name" },
-                        { "data": "ocid" }
-                    ]
-                })
+                var json = datas['account_list'][0]['character_list'];
+                let character_class = new Array();
+                let character_level = new Array();
+                let character_name = new Array();
+                let ocid = new Array();
+                let world_name = new Array();
+                for (i = 0; i < json.length; i++) {
+                    character_class[i] = json[i].character_class;
+                    character_level[i] = json[i].character_level;
+                    character_name[i] = json[i].character_name;
+                    ocid[i] = json[i].ocid;
+                    world_name[i] = json[i].world_name;
+                }
 
-                table.on('click', 'tbody tr', function () {
-                    let data = table.row(this).data();
-                    // console.log(table.row(this));
-                    console.log(table.row(this).data());
-                    // console.log(table.row(this).data(0));
-                    console.log(table.row(this).data()["ocid"]);
+                set_dropdown();
+                create_table(0);
 
-                    alert('You clicked on ' + data["ocid"] + "'s row");
-                });
 
-                // for (i = 0; i < ocid.length; i++) {
-                //     let tr = document.createElement("tr");
 
-                //     let td1 = document.createElement("td");
-                //     td1.appendChild(document.createTextNode(character_class[i] + ""));
+                //     for (i = 0; i < ocid.length; i++) {
+                //         let tr = document.createElement("tr");
 
-                //     let td2 = document.createElement("td");
-                //     td2.appendChild(document.createTextNode(character_level[i] + ""));
+                //         let td1 = document.createElement("td");
+                //         td1.appendChild(document.createTextNode(character_class[i] + ""));
 
-                //     let td3 = document.createElement("td");
-                //     td3.appendChild(document.createTextNode(character_name[i] + ""));
+                //         let td2 = document.createElement("td");
+                //         td2.appendChild(document.createTextNode(character_level[i] + ""));
 
-                //     let td4 = document.createElement("td");
-                //     td3.appendChild(document.createTextNode(ocid[i] + ""));
+                //         let td3 = document.createElement("td");
+                //         td3.appendChild(document.createTextNode(character_name[i] + ""));
 
-                //     let td5 = document.createElement("td");
-                //     td3.appendChild(document.createTextNode(world_name[i] + ""));
+                //         let td4 = document.createElement("td");
+                //         td3.appendChild(document.createTextNode(ocid[i] + ""));
 
-                //     tr.appendChild(td1);
-                //     tr.appendChild(td2);
-                //     tr.appendChild(td3);
-                //     tr.appendChild(td4);
-                //     tr.appendChild(td5);
+                //         let td5 = document.createElement("td");
+                //         td3.appendChild(document.createTextNode(world_name[i] + ""));
 
-                //     table.appendChild(tr);
-                // }
+                //         tr.appendChild(td1);
+                //         tr.appendChild(td2);
+                //         tr.appendChild(td3);
+                //         tr.appendChild(td4);
+                //         tr.appendChild(td5);
+
+                //         table.appendChild(tr);
+                //     }
             }
         })
     })
 })
+
+function click_dropdown(account_num){
+    create_table(account_num);
+}
+
+function set_dropdown() {
+    id_dropdown.removeAttribute("disabled");
+    var i;
+    // console.log(account_num);
+
+    for (i = 0; i < account_num; i++) {
+        // console.log(i + 1 + "번");
+        let add_li = document.createElement("li");
+        let add_a = document.createElement("a");
+        add_a.setAttribute("class", "dropdown-item");
+        add_a.setAttribute("onclick", "click_dropdown("+i+")");
+        add_a.appendChild(document.createTextNode(i + 1 + "번"))
+        add_li.appendChild(add_a);
+
+        mapleid_ul.appendChild(add_li);
+    }
+}
+
+
+
+function create_table(account_num) {
+    let table = new DataTable("#mytable", {
+        data: data['account_list'][account_num]['character_list'],
+        pageLength: 25,
+        searching: true,
+        destroy: true,
+        columns: [
+            { "data": "world_name" },
+            { "data": "character_level" },
+            { "data": "character_class" },
+            { "data": "character_name" },
+            { "data": "ocid" }
+        ]
+    })
+
+    table.on('click', 'tbody tr', function () {
+        let data = table.row(this).data();
+        alert('You clicked on ' + data["ocid"] + "'s row");
+    });
+}

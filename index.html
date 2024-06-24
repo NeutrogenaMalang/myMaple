@@ -12,9 +12,21 @@
             <input type="text" class="form-control" id="apikey" placeholder="API key">
             <label for="apikey">API key</label>
         </div>
-        <div class="row">
+        <div class="row mb-3">
             <div class="mb-3 col">
                 <input class="btn btn-primary col-md-12" id="data_load" type="button" value="로드">
+            </div>
+            <div class="dropend" id="mapleid">
+                <button class="btn btn-warning dropdown-toggle w-75" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false" id="id_dropdown" disabled>
+                    계정 내 메이플 ID
+                </button>
+                <ul class="dropdown-menu" id="mapleid_ul">
+                    <!-- <li><a class="dropdown-item" id="dropdown_1">1번</a></li> -->
+                    <!-- <li><hr class="dropdown-divider"></li> -->
+                    <!-- <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+                </ul>
             </div>
         </div>
 
