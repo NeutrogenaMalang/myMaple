@@ -1,0 +1,292 @@
+{
+    "data": [
+        {
+            "num": "1",
+            "type": "모험가",
+            "position": "전사",
+            "name": "히어로"
+        },
+        {
+            "num": "2",
+            "type": "모험가",
+            "position": "전사",
+            "name": "팔라딘"
+        },
+        {
+            "num": "3",
+            "type": "모험가",
+            "position": "전사",
+            "name": "다크나이트"
+        },
+        {
+            "num": "4",
+            "type": "모험가",
+            "position": "마법사",
+            "name": "아크메이지(불,독)"
+        },
+        {
+            "num": "5",
+            "type": "모험가",
+            "position": "마법사",
+            "name": "아크메이지(썬,콜)"
+        },
+        {
+            "num": "6",
+            "type": "모험가",
+            "position": "마법사",
+            "name": "비숍"
+        },
+        {
+            "num": "7",
+            "type": "모험가",
+            "position": "궁수",
+            "name": "보우마스터"
+        },
+        {
+            "num": "8",
+            "type": "모험가",
+            "position": "궁수",
+            "name": "신궁"
+        },
+        {
+            "num": "9",
+            "type": "모험가",
+            "position": "궁수",
+            "name": "패스파인더"
+        },
+        {
+            "num": "10",
+            "type": "모험가",
+            "position": "도적",
+            "name": "나이트로드"
+        },
+        {
+            "num": "11",
+            "type": "모험가",
+            "position": "도적",
+            "name": "섀도어"
+        },
+        {
+            "num": "12",
+            "type": "모험가",
+            "position": "도적",
+            "name": "듀얼블레이드"
+        },
+        {
+            "num": "13",
+            "type": "모험가",
+            "position": "해적",
+            "name": "바이퍼"
+        },
+        {
+            "num": "14",
+            "type": "모험가",
+            "position": "해적",
+            "name": "캡틴"
+        },
+        {
+            "num": "15",
+            "type": "모험가",
+            "position": "해적",
+            "name": "캐논슈터"
+        },
+        {
+            "num": "16",
+            "type": "시그너스",
+            "position": "전사",
+            "name": "소울마스터"
+        },
+        {
+            "num": "17",
+            "type": "시그너스",
+            "position": "전사",
+            "name": "미하일"
+        },
+        {
+            "num": "18",
+            "type": "시그너스",
+            "position": "마법사",
+            "name": "플레임위자드"
+        },
+        {
+            "num": "19",
+            "type": "시그너스",
+            "position": "궁수",
+            "name": "윈드브레이커"
+        },
+        {
+            "num": "20",
+            "type": "시그너스",
+            "position": "도적",
+            "name": "나이트워커"
+        },
+        {
+            "num": "21",
+            "type": "시그너스",
+            "position": "해적",
+            "name": "스트라이커"
+        },
+        {
+            "num": "22",
+            "type": "레지스탕스",
+            "position": "전사",
+            "name": "블래스터"
+        },
+        {
+            "num": "23",
+            "type": "레지스탕스",
+            "position": "전사",
+            "name": "데몬슬레이어"
+        },
+        {
+            "num": "24",
+            "type": "레지스탕스",
+            "position": "전사",
+            "name": "데몬어벤져"
+        },
+        {
+            "num": "25",
+            "type": "레지스탕스",
+            "position": "마법사",
+            "name": "배틀메이지"
+        },
+        {
+            "num": "26",
+            "type": "레지스탕스",
+            "position": "궁수",
+            "name": "와일드헌터"
+        },
+        {
+            "num": "27",
+            "type": "레지스탕스",
+            "position": "도적",
+            "name": "제논"
+        },
+        {
+            "num": "28",
+            "type": "레지스탕스",
+            "position": "해적",
+            "name": "메카닉"
+        },
+        {
+            "num": "29",
+            "type": "영웅",
+            "position": "전사",
+            "name": "아란"
+        },
+        {
+            "num": "30",
+            "type": "영웅",
+            "position": "마법사",
+            "name": "에반"
+        },
+        {
+            "num": "31",
+            "type": "영웅",
+            "position": "마법사",
+            "name": "루미너스"
+        },
+        {
+            "num": "32",
+            "type": "영웅",
+            "position": "궁수",
+            "name": "메르세데스"
+        },
+        {
+            "num": "33",
+            "type": "영웅",
+            "position": "도적",
+            "name": "팬텀"
+        },
+        {
+            "num": "34",
+            "type": "영웅",
+            "position": "해적",
+            "name": "은월"
+        },
+        {
+            "num": "35",
+            "type": "노바",
+            "position": "전사",
+            "name": "카이저"
+        },
+        {
+            "num": "36",
+            "type": "노바",
+            "position": "궁수",
+            "name": "카인"
+        },
+        {
+            "num": "37",
+            "type": "노바",
+            "position": "도적",
+            "name": "카데나"
+        },
+        {
+            "num": "38",
+            "type": "노바",
+            "position": "해적",
+            "name": "엔젤릭버스터"
+        },
+        {
+            "num": "39",
+            "type": "레프",
+            "position": "전사",
+            "name": "아델"
+        },
+        {
+            "num": "40",
+            "type": "레프",
+            "position": "마법사",
+            "name": "일리움"
+        },
+        {
+            "num": "41",
+            "type": "레프",
+            "position": "도적",
+            "name": "칼리"
+        },
+        {
+            "num": "42",
+            "type": "레프",
+            "position": "해적",
+            "name": "아크"
+        },
+        {
+            "num": "43",
+            "type": "아니마",
+            "position": "마법사",
+            "name": "라라"
+        },
+        {
+            "num": "44",
+            "type": "아니마",
+            "position": "도적",
+            "name": "호영"
+        },
+        {
+            "num": "45",
+            "type": "초월자",
+            "position": "전사",
+            "name": "제로"
+        },
+        {
+            "num": "46",
+            "type": "프렌즈 월드",
+            "position": "마법사",
+            "name": "키네시스"
+        },
+        {
+            "num": "47",
+            "type": "몬스터",
+            "position": "전사",
+            "name": "핑크빈"
+        },
+        {
+            "num": "48",
+            "type": "몬스터",
+            "position": "해적",
+            "name": "예티"
+        }
+    ]
+}

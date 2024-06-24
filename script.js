@@ -3,12 +3,14 @@ var mytable = document.getElementById('mytable');
 var mapleid = document.getElementById('mapleid');
 var mapleid_ul = document.getElementById('mapleid_ul');
 var id_dropdown = document.getElementById('id_dropdown');
-var account_num=0;
+var account_num = 0;
 var data;
 
 $(document).ready(function () {
     $(data_load).click(function () {
         account_num = 0;
+        // mapleid_ul.removeChild();
+        mapleid_ul.innerHTML = '';
         $.ajax({
             url: 'https://open.api.nexon.com/maplestory/v1/character/list',
             dataType: "json",
@@ -37,43 +39,10 @@ $(document).ready(function () {
 
                 set_dropdown();
                 create_table(0);
-
-
-
-                //     for (i = 0; i < ocid.length; i++) {
-                //         let tr = document.createElement("tr");
-
-                //         let td1 = document.createElement("td");
-                //         td1.appendChild(document.createTextNode(character_class[i] + ""));
-
-                //         let td2 = document.createElement("td");
-                //         td2.appendChild(document.createTextNode(character_level[i] + ""));
-
-                //         let td3 = document.createElement("td");
-                //         td3.appendChild(document.createTextNode(character_name[i] + ""));
-
-                //         let td4 = document.createElement("td");
-                //         td3.appendChild(document.createTextNode(ocid[i] + ""));
-
-                //         let td5 = document.createElement("td");
-                //         td3.appendChild(document.createTextNode(world_name[i] + ""));
-
-                //         tr.appendChild(td1);
-                //         tr.appendChild(td2);
-                //         tr.appendChild(td3);
-                //         tr.appendChild(td4);
-                //         tr.appendChild(td5);
-
-                //         table.appendChild(tr);
-                //     }
             }
         })
     })
 })
-
-function click_dropdown(account_num){
-    create_table(account_num);
-}
 
 function set_dropdown() {
     id_dropdown.removeAttribute("disabled");
@@ -85,15 +54,13 @@ function set_dropdown() {
         let add_li = document.createElement("li");
         let add_a = document.createElement("a");
         add_a.setAttribute("class", "dropdown-item");
-        add_a.setAttribute("onclick", "click_dropdown("+i+")");
+        add_a.setAttribute("onclick", "create_table(" + i + ")");
         add_a.appendChild(document.createTextNode(i + 1 + "번"))
         add_li.appendChild(add_a);
 
         mapleid_ul.appendChild(add_li);
     }
 }
-
-
 
 function create_table(account_num) {
     let table = new DataTable("#mytable", {
@@ -102,6 +69,11 @@ function create_table(account_num) {
         searching: true,
         destroy: true,
         columns: [
+            // {
+            //     render: function (data, type, row, meta) {
+            //         return meta.row + meta.settings._iDisplayStart + 1;
+            //     }
+            // },
             { "data": "world_name" },
             { "data": "character_level" },
             { "data": "character_class" },
