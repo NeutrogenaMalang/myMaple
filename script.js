@@ -2,12 +2,12 @@ var data_load = document.getElementById('data_load');
 var mytable = document.getElementById('mytable');
 
 $(document).ready(function () {
-    // const Url = 'https://jsonplaceholder.typicode.com/posts';
     $(data_load).click(function () {
         $.ajax({
             url: 'https://open.api.nexon.com/maplestory/v1/character/list',
             dataType: "json",
             beforeSend: function (xhr) {
+                var apikey = document.getElementById('apikey').value;
                 xhr.setRequestHeader("accept", "application/json")
                 xhr.setRequestHeader("x-nxopen-api-key", apikey)
             }, success: function (data) {
