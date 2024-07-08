@@ -13,7 +13,7 @@
                 aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="#">월드 별 유니온 조회</a>
+            <a class="navbar-brand" href="#">월드 별 유니온 조회 (2차 전직 이상만 조회)</a>
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
@@ -34,21 +34,35 @@
         </div>
     </nav>
     <div class="container pt-5 mt-5">
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="apikey" placeholder="API key">
-            <label for="apikey">API key</label>
-        </div>
-        <div class="row mb-3">
-            <div class="mb-3 col">
-                <input class="btn btn-primary col-md-12" id="load_button" type="button" value="로드">
+        <div class="row justify-content-between">
+            <div class="form-floating mb-3 col-md-8 row">
+                <input type="text" class="form-control" id="apikey" placeholder="API key">
+                <label for="apikey">API key</label>
             </div>
-            <div class="dropend" id="mapleid">
-                <button class="btn btn-warning dropdown-toggle col-md-6" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false" id="id_dropdown" disabled>
-                    계정 내 메이플 ID
-                </button>
-                <ul class="dropdown-menu" id="mapleid_ul">
-                </ul>
+            <div class="mb-3 col-md-4 row">
+                <input class="btn btn-primary" id="load_button" type="button" value="로드">
+            </div>
+        </div>
+        <div class="row mb-3 justify-content-between">
+            <div class="col-md-5">
+                <div class="dropend row" id="mapleid">
+                    <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false" id="mapleid_dropdown" disabled>
+                        계정 내 메이플 ID
+                    </button>
+                    <ul class="dropdown-menu" id="mapleid_ul">
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="dropend row" id="worldid">
+                    <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false" id="worldid_dropdown" disabled>
+                        월드 선택
+                    </button>
+                    <ul class="dropdown-menu" id="worldid_ul">
+                    </ul>
+                </div>
             </div>
             <!-- <div class="dropend" id="mapleid">
                 <button class="btn btn-warning dropdown-toggle col-md-6" type="button" data-bs-toggle="dropdown"
