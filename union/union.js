@@ -33,7 +33,9 @@ $(document).ready(function () {
         var click_data = union_table.row(this).data()
         // console.log(click_data);
         console.log(click_data[5])
-        alert(click_data[6])
+        var url = "https://maple.gg/u/" + click_data[5]
+        window.open(url, "_blank")
+        // alert(click_data[6])
     });
 })
 
@@ -105,7 +107,10 @@ function create_table(api_data) {
                             && (json_data[j].name === api_data[k]["character_class"]
                                 || json_data[j].name[0] === api_data[k]["character_class"]
                                 || json_data[j].name[1] === api_data[k]["character_class"]
-                                || json_data[j].name[2] === api_data[k]["character_class"])) {
+                                || json_data[j].name[2] === api_data[k]["character_class"]
+                                || json_data[j].name[3] === api_data[k]["character_class"]
+                                || json_data[j].name[4] === api_data[k]["character_class"]
+                                || json_data[j].name[5] === api_data[k]["character_class"])) {
                             character_level = api_data[k]["character_level"]
                             character_name = api_data[k]["character_name"]
                             character_ocid = api_data[k]["ocid"]
@@ -136,7 +141,37 @@ function create_table(api_data) {
                 data: union_list,
                 pageLength: 50,
                 searching: true,
-                destroy: true
+                destroy: true,
+                columnDefs: [
+                    {
+                        target: 0,
+                        width: "10%",
+                        className: "text-center"
+                    }, {
+                        target: 1,
+                        width: "15%",
+                        className: "text-center"
+                    }, {
+                        target: 2,
+                        width: "10%",
+                        className: "text-center"
+                    }, {
+                        target: 3,
+                        width: "25%",
+                        className: "text-center"
+                    }, {
+                        target: 4,
+                        width: "10%",
+                        className: "text-center"
+                    }, {
+                        target: 5,
+                        width: "30%",
+                        className: "text-center"
+                    }, {
+                        target: 6,
+                        visible: false,
+                        searchable: false
+                    }]
             })
 
             mapleid_ul.innerHTML = ""
