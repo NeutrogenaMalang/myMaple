@@ -7,72 +7,11 @@
 </head>
 
 <body>
-    <nav class="navbar bg-warning fixed-top">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="#">전체 캐릭터 조회</a>
-            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">엘리시움 뉴트로지나</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">전체 캐릭 리스트</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./union/union.html">월드 별 유니온 조회</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <div class="container-fluid">
-        <a class="text-decoration-none text-black" href="./character_list.html">서버별 캐릭현황</a>
-    </div>
-    <div class="container pt-5">
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="apikey" placeholder="API key">
-            <label for="apikey">API key</label>
-        </div>
-        <div class="row mb-3">
-            <div class="mb-3 col">
-                <input class="btn btn-primary col-md-12" id="data_load" type="button" value="로드">
-            </div>
-            <div class="dropend" id="mapleid">
-                <button class="btn btn-warning dropdown-toggle w-75" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false" id="id_dropdown" disabled>
-                    계정 내 메이플 ID
-                </button>
-                <ul class="dropdown-menu" id="mapleid_ul">
-                </ul>
-            </div>
-        </div>
-
-        <table class="table table-hover" id="mytable" style="width:100%">
-            <thead>
-                <tr>
-                    <th>월드</th>
-                    <th>레벨</th>
-                    <th>클래스</th>
-                    <th>이름</th>
-                    <th>ocid</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-    </div>
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script>window.location.replace('./union/union.html')</script>
+    <!-- <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
     <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="script.js"></script> -->
 </body>
 
 </html>

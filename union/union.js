@@ -33,7 +33,8 @@ $(document).ready(function () {
         var click_data = union_table.row(this).data()
         // console.log(click_data);
         console.log(click_data[5])
-        var url = "https://maple.gg/u/" + click_data[5]
+        var url = "https://maple.gg/search?q=" + click_data[5]
+        // var url = "https://maple.gg/u/" + click_data[5]
         window.open(url, "_blank")
         // alert(click_data[6])
     });
